@@ -14,8 +14,24 @@ app.use(express.json());
 
 app.get("/users", userController.getUsers);
 
+
+
+
+
+
+app.post("/exams", userController.postNewExam)
+
+app.post("/professors", userController.addProfessor)
+
+app.post("/disciplines", userController.addDiscipline)
+
 export async function init () {
   await connectDatabase();
 }
+
+
+
+
+
 
 export default app;

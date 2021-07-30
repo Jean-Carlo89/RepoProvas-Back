@@ -11,3 +11,55 @@ export async function getUsers (req: Request, res: Response) {
     res.sendStatus(500);
   }
 }
+
+
+
+
+
+
+
+
+export async function postNewExam (req: Request, res: Response) {
+  try {
+    console.log(req.body)
+    return
+     //await userService.postNewExam();
+    
+    res.sendStatus(200);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
+}
+
+export async function addProfessor (req: Request, res: Response) {
+  try {
+    console.log(req.body)
+
+    
+    
+     await userService.addProfessor(req.body);
+    
+    res.sendStatus(200);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
+}
+
+export async function addDiscipline (req: Request, res: Response) {
+  try {
+    console.log(req.body)
+
+    
+    
+     await userService.addDiscipline(req.body);
+    
+    res.sendStatus(200);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
+}
+
+

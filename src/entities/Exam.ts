@@ -20,7 +20,4 @@ import Professor from './Professor'
      @Column()
      year:string
 
-     @Column()
-     semester:string
-
  }

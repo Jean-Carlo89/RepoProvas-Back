@@ -1,6 +1,6 @@
 import {Entity,PrimaryGeneratedColumn,Column, OneToMany} from 'typeorm'
 
-import Discipline from './Disciplines'
+import Discipline from './Discipline'
 
 @Entity("period")
 export default class Period{
@@ -10,6 +10,6 @@ export default class Period{
     @Column()
     type:string
 
-    @OneToMany(()=>Discipline,disciplines=>disciplines.id)
-    disciplineId:number
+    @OneToMany(()=>Discipline,discipline=>discipline.period)
+    disciplines: Discipline[]
 }
