@@ -25,7 +25,7 @@ interface addProfessor{
 
 interface addDiscipline{
   name:string,
-  period:object
+  period:Period
 }
 
 interface addPeriod{
@@ -48,12 +48,15 @@ export async function addPeriod (period:addPeriod) {
   
   await getRepository(Period).insert(period)
 }
-
+  
 
 export async function getPeriods () {
   
-  const periods = await getRepository(Period).find({relations:["disciplines"]})
-
+  const periods = await getRepository(Period).find({
+    order:{
+      id:"ASC"
+    }, relations:["disciplines"]})
+  //relations:["disciplines"]
   return periods
 }
 // export async function postNewExam () {
