@@ -25,6 +25,12 @@ app.post("/professors", userController.addProfessor)
 
 app.post("/disciplines", userController.addDiscipline)
 
+
+
+
+app.get("/periods", userController.getPeriods)
+app.post("/periods", userController.addPeriod)
+
 export async function init () {
   await connectDatabase();
 }

@@ -8,7 +8,7 @@ export default class Period{
     id:number
 
     @Column()
-    type:string
+    name:number
 
     @OneToMany(()=>Discipline,discipline=>discipline.period)
     disciplines: Discipline[]

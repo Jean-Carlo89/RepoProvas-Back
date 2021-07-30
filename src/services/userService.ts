@@ -5,7 +5,7 @@ import User from "../entities/User";
 import Exam from "../entities/Exam"
 import Professor from "../entities/Professor";
 import Discipline from "../entities/Discipline"
-
+import Period from '../entities/Period'
 
 export async function getUsers () {
   const users = await getRepository(User).find({
@@ -24,10 +24,13 @@ interface addProfessor{
 }
 
 interface addDiscipline{
-  name:string
+  name:string,
+  period:object
 }
 
-
+interface addPeriod{
+  name:number
+}
 
 export async function addProfessor (professor:addProfessor) {
   
@@ -40,6 +43,19 @@ export async function addDiscipline (discipline:addDiscipline) {
   await getRepository(Discipline).insert(discipline)
 }
 
+
+export async function addPeriod (period:addPeriod) {
+  
+  await getRepository(Period).insert(period)
+}
+
+
+export async function getPeriods () {
+  
+  const periods = await getRepository(Period).find({relations:["disciplines"]})
+
+  return periods
+}
 // export async function postNewExam () {
 //   const users = await  getConnection().createQueryBuilder().insert().into(Exam).values({
 //     discipline:,
