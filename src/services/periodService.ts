@@ -3,7 +3,7 @@ import Period from '../entities/Period'
 
 
 interface addPeriod{
-    name:number
+    name:string
   }
   
   
