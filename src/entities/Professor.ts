@@ -9,11 +9,11 @@ export default class Professor{
     @Column()
     name:string
 
-    @ManyToMany(()=>Discipline,{
+    @ManyToMany(()=>Discipline,(discipline:Discipline)=>discipline.professors,{
         cascade: true
     })
     @JoinTable()
-    discplines: Discipline[]
+    disciplines: Discipline[]
 
 
 

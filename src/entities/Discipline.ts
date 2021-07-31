@@ -16,4 +16,10 @@ export default class Discipline{
 
     @ManyToOne(()=>Period,periods=>periods.disciplines)
     period:Period
-}
+
+
+    @ManyToMany(()=>Professor,(professor:Professor)=>professor.disciplines)
+    professors: Professor[]
+
+    
+ }
