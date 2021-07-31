@@ -28,7 +28,7 @@ app.post("/exams", userController.postNewExam)
 
 
 app.post("/disciplines", disciplineController.addDiscipline)
-
+app.get("/disciplines", disciplineController.getDisciplines)
 
 
 
