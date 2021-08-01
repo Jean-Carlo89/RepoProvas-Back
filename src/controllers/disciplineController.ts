@@ -29,9 +29,25 @@ export async function addDiscipline (req: Request, res: Response) {
 
 export async function getDisciplines (req: Request, res: Response) {
   try {
-    console.log(req.body)
+    
     
     const disciplines = await disciplineService.getDisciplines();
+    
+    res.send(disciplines)
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
+}
+
+
+export async function getDisciplineById (req: Request, res: Response) {
+  try {
+    console.log(req.params)
+
+    const {id}=req.params
+   
+    const disciplines = await disciplineService.getDisciplineById(Number(id));
     
     res.send(disciplines)
   } catch (err) {

@@ -21,6 +21,12 @@ interface addDiscipline{
   
 
   export async function getDisciplines () {
+    return  await getRepository(Discipline).find({relations:["period", "professors","exams", "exams.professor"]})
+   
+  }
+
+
+  export async function getDisciplineById(id:number) {
     return  await getRepository(Discipline).find({relations:["period", "professors"]})
    
   }

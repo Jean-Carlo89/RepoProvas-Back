@@ -7,13 +7,13 @@ import Professor from './Professor'
      @PrimaryGeneratedColumn()
      id:number
      
-     @ManyToOne(()=>Discipline,discipline=>discipline.id)
+     @ManyToOne(()=>Discipline,discipline=>discipline.exams)
      discipline:Discipline
 
-     @ManyToOne(()=>Category,category=>category.id)
+     @ManyToOne(()=>Category,category=>category.exams)
      category:Category
 
-     @ManyToOne(() => Professor)
+     @ManyToOne(() => Professor,professor=>professor.exams)
      @JoinColumn()
      professor: Professor;
 

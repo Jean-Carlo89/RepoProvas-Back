@@ -4,14 +4,14 @@ import Professor from './Professor'
 import Period from '../entities/Period'
 
 @Entity("disciplines")
-export default class Discipline{
+export default class  Discipline{
     @PrimaryGeneratedColumn()
     id:number
 
     @Column()
     name:string
 
-    @OneToMany(()=>Exam,exams=>exams.id)
+    @OneToMany(()=>Exam,exams=>exams.discipline)
     exams:Exam[]
 
     @ManyToOne(()=>Period,periods=>periods.disciplines)

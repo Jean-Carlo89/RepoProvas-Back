@@ -38,7 +38,7 @@ app.get("/categories", categoryController.getCategories)
 
 app.post("/disciplines", disciplineController.addDiscipline)
 app.get("/disciplines", disciplineController.getDisciplines)
-
+app.get("/disciplines/:id",disciplineController.getDisciplineById)
 
 
 
