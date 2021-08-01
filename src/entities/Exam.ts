@@ -2,6 +2,8 @@ import {Entity,PrimaryGeneratedColumn,Column, OneToMany, ManyToOne, OneToOne,Joi
 import Category from './Category'
 import  Discipline from './Discipline'
 import Professor from './Professor'
+import Period from './Period'
+
 @Entity("exams")
  export default class Exams{
      @PrimaryGeneratedColumn()
@@ -22,5 +24,8 @@ import Professor from './Professor'
 
      @Column()
      urlLink:string
+
+     @ManyToOne(() => Period, period=>period.exams)
+     period:Period
 
  }
