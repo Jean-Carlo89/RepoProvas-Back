@@ -7,17 +7,20 @@ import Professor from './Professor'
      @PrimaryGeneratedColumn()
      id:number
      
-     @ManyToOne(()=>Discipline,disciplines=>disciplines.id)
-     discipline:number
+     @ManyToOne(()=>Discipline,discipline=>discipline.id)
+     discipline:Discipline
 
-     @ManyToOne(()=>Category,categories=>categories.id)
-     category:number
+     @ManyToOne(()=>Category,category=>category.id)
+     category:Category
 
-     @OneToOne(() => Professor)
+     @ManyToOne(() => Professor)
      @JoinColumn()
      professor: Professor;
 
      @Column()
      year:string
+
+     @Column()
+     urlLink:string
 
  }
