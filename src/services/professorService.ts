@@ -58,4 +58,10 @@ export async function getProfessors (professor:addProfessor) {
     const professors =await getRepository(Professor).find({relations:["disciplines"]})
     return professors
 }
+
+export async function getProfessorById (id:number):Promise<Professor> {
+  
+  return await getRepository(Professor).findOne({relations:["exams.discipline","exams","exams.period","exams.category"],where:{id}})
+ 
+}
   

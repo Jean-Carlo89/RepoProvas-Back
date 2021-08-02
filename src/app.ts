@@ -44,6 +44,9 @@ app.get("/disciplines/:id",disciplineController.getDisciplineById)
 
 app.get("/professors", professorController.getProfessors)
 app.post("/professors", professorController.addProfessor)
+app.get("/professors/:id", professorController.getProfessorById)
+
+
 
 
 
